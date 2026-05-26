@@ -33,3 +33,4 @@ env/
 *.swo
 *~
 .DS_Store
+.aider*
