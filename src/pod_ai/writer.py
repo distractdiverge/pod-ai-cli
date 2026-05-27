@@ -10,5 +10,7 @@ def write_project(project, output_path: str):
         from org.mpxj.mspdi import MSPDIWriter
         writer = MSPDIWriter()
         writer.write(project, output_path)
+    except ImportError as e:
+        raise RuntimeError(f"Failed to import MSPDIWriter: {e}") from e
     except Exception as e:
         raise RuntimeError(f"Failed to write project to '{output_path}': {e}") from e
